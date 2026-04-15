@@ -23,6 +23,8 @@ contract BookRentalEscrow {
     }
 
     uint256 public nextRentalId;
+    bool private _withdrawLock;
+
     mapping(uint256 => Rental) public rentals;
     mapping(address => uint256) public pendingWithdrawals;
 
@@ -33,6 +35,13 @@ contract BookRentalEscrow {
     event RentalSettled(uint256 indexed rentalId, uint256 lenderShare, uint256 renterShare);
     event OfferCancelled(uint256 indexed rentalId);
     event Withdrawal(address indexed user, uint256 amount);
+
+    modifier nonReentrantWithdrawal() {
+        require(!_withdrawLock, "reentrant call");
+        _withdrawLock = true;
+        _;
+        _withdrawLock = false;
+    }
 
     function createOffer(
         string calldata bookId,
@@ -123,7 +132,7 @@ contract BookRentalEscrow {
         emit OfferCancelled(rentalId);
     }
 
-    function withdraw() external {
+    function withdraw() external nonReentrantWithdrawal {
         uint256 amount = pendingWithdrawals[msg.sender];
         require(amount > 0, "nothing to withdraw");
 
