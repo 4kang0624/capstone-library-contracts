@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/4kang0624/capstone-library-contracts/issues"
   },
-  "homepage": "https://github.com/4kang0624/capstone-library-contracts#readme"
+  "homepage": "https://github.com/4kang0624/capstone-library-contracts#readme",
+  "directories": {
+    "test": "test"
+  }
 }
