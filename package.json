@@ -1,0 +1,28 @@
+{
+  "name": "capstone-library-contracts",
+  "version": "1.0.0",
+  "description": "Smart Contracts for P2P Book Rental in the Capstone Design Library Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4kang0624/capstone-library-contracts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4kang0624/capstone-library-contracts/issues"
+  },
+  "homepage": "https://github.com/4kang0624/capstone-library-contracts#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "hardhat": "^2.28.6"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
