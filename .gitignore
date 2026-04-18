@@ -14,6 +14,7 @@ ignition/deployments/
 # Logs
 logs/
 *.log
+*.txt
 npm-debug.log*
 
 # OS
@@ -29,3 +30,6 @@ coverage/
 coverage.json
 typechain/
 typechain-types/
+
+# Generated types
+types/
