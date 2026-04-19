@@ -11,6 +11,12 @@ ignition/deployments/
 .env.local
 .env.*.local
 
+# Ignition parameters (may include admin wallet addresses)
+ignition/paremeters.json
+ignition/parameters.json
+ignition/parameters.local.json
+ignition/parameters.*.local.json
+
 # Logs
 logs/
 *.log
